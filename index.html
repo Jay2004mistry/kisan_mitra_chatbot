@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Kisan Mitra</title>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --green-dark  : #1a3a2a;
+    --green-mid   : #2d6a4f;
+    --green-light : #52b788;
+    --green-pale  : #d8f3dc;
+    --amber       : #e9c46a;
+    --soil        : #6b4226;
+    --white       : #f8fdf9;
+    --bubble-user : #2d6a4f;
+    --bubble-bot  : #ffffff;
+    --text-dark   : #1a3a2a;
+    --text-muted  : #6b8f71;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--green-dark);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image:
+      radial-gradient(ellipse at 20% 50%, #2d6a4f33 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, #52b78822 0%, transparent 50%);
+  }
+
+  .phone {
+    width: 390px;
+    height: 820px;
+    background: var(--white);
+    border-radius: 40px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 40px 80px #00000066, 0 0 0 1px #52b78833;
+  }
+
+  /* ── Header ── */
+  .header {
+    background: var(--green-mid);
+    padding: 20px 20px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+  }
+  .avatar {
+    width: 46px; height: 46px;
+    border-radius: 50%;
+    background: var(--green-light);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+  .header-info { flex: 1; }
+  .header-name {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+  }
+  .header-sub {
+    font-size: 12px;
+    color: var(--green-pale);
+    margin-top: 2px;
+  }
+  .status-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--amber);
+    display: inline-block;
+    margin-right: 5px;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%,100% { opacity:1; } 50% { opacity:0.4; }
+  }
+
+  /* ── Quick chips ── */
+  .chips {
+    background: var(--white);
+    padding: 10px 14px;
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    flex-shrink: 0;
+    border-bottom: 1px solid #e8f5e9;
+    scrollbar-width: none;
+  }
+  .chips::-webkit-scrollbar { display: none; }
+  .chip {
+    white-space: nowrap;
+    font-size: 12px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    border: 1px solid var(--green-light);
+    color: var(--green-mid);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .chip:hover {
+    background: var(--green-mid);
+    color: #fff;
+    border-color: var(--green-mid);
+  }
+
+  /* ── Chat area ── */
+  .chat {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: #d8f3dc transparent;
+  }
+
+  /* date label */
+  .date-label {
+    text-align: center;
+    font-size: 11px;
+    color: var(--text-muted);
+    background: #e8f5e955;
+    padding: 3px 12px;
+    border-radius: 10px;
+    align-self: center;
+  }
+
+  /* bubbles */
+  .bubble-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    animation: fadeUp 0.25s ease;
+  }
+  @keyframes fadeUp {
+    from { opacity:0; transform: translateY(8px); }
+    to   { opacity:1; transform: translateY(0); }
+  }
+  .bubble-row.user { flex-direction: row-reverse; }
+
+  .bot-avatar {
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    background: var(--green-light);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+
+  .bubble {
+    max-width: 75%;
+    padding: 10px 14px;
+    border-radius: 18px;
+    font-size: 14px;
+    line-height: 1.55;
+    white-space: pre-wrap;
+  }
+  .bubble.bot {
+    background: var(--bubble-bot);
+    color: var(--text-dark);
+    border-bottom-left-radius: 4px;
+    box-shadow: 0 1px 4px #00000012;
+  }
+  .bubble.user {
+    background: var(--bubble-user);
+    color: #fff;
+    border-bottom-right-radius: 4px;
+  }
+  .bubble-time {
+    font-size: 10px;
+    color: var(--text-muted);
+    margin-top: 3px;
+    padding: 0 4px;
+    align-self: flex-end;
+  }
+  .bubble-row.user .bubble-time { text-align: right; }
+
+  /* typing indicator */
+  .typing { display: flex; gap: 4px; padding: 12px 14px; align-items: center; }
+  .typing span {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--green-light);
+    animation: bounce 1s infinite;
+  }
+  .typing span:nth-child(2) { animation-delay: 0.15s; }
+  .typing span:nth-child(3) { animation-delay: 0.3s; }
+  @keyframes bounce {
+    0%,60%,100% { transform: translateY(0); }
+    30% { transform: translateY(-5px); }
+  }
+
+  /* ── Input bar ── */
+  .input-bar {
+    padding: 12px 14px;
+    background: var(--white);
+    border-top: 1px solid #e8f5e9;
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+    flex-shrink: 0;
+  }
+  .input-wrap {
+    flex: 1;
+    background: #f0faf2;
+    border-radius: 24px;
+    border: 1.5px solid #c8e6c9;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    transition: border-color 0.2s;
+  }
+  .input-wrap:focus-within { border-color: var(--green-light); }
+  #msg-input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text-dark);
+    outline: none;
+    resize: none;
+    max-height: 80px;
+    line-height: 1.4;
+  }
+  #msg-input::placeholder { color: #aac8ae; }
+
+  #send-btn {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: var(--green-mid);
+    border: none;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s, transform 0.1s;
+    flex-shrink: 0;
+  }
+  #send-btn:hover { background: var(--green-light); }
+  #send-btn:active { transform: scale(0.93); }
+  #send-btn svg { width:20px; height:20px; fill:#fff; }
+</style>
+</head>
+<body>
+
+<div class="phone">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="avatar">🌾</div>
+    <div class="header-info">
+      <div class="header-name">Kisan Mitra</div>
+      <div class="header-sub">
+        <span class="status-dot"></span>Farmer Assistant · Online
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick chips -->
+  <div class="chips">
+    <button class="chip" onclick="sendChip('my crop has disease')">Crop disease</button>
+    <button class="chip" onclick="sendChip('weather in Ahmedabad')">Weather</button>
+    <button class="chip" onclick="sendChip('which fertilizer for wheat')">Fertilizer</button>
+    <button class="chip" onclick="sendChip('insects on my field')">Pest control</button>
+    <button class="chip" onclick="sendChip('government scheme for farmers')">Govt schemes</button>
+    <button class="chip" onclick="sendChip('when to sow wheat')">Sowing time</button>
+  </div>
+
+  <!-- Chat -->
+  <div class="chat" id="chat">
+    <div class="date-label">Today</div>
+
+    <!-- Welcome message -->
+    <div class="bubble-row">
+      <div class="bot-avatar">🌾</div>
+      <div>
+        <div class="bubble bot">Namaste Kisan bhai! 🙏
+I am Kisan Mitra. Ask me about crops, weather, soil, fertilizer, pests or government schemes.</div>
+        <div class="bubble-time" id="welcome-time"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Input -->
+  <div class="input-bar">
+    <div class="input-wrap">
+      <textarea id="msg-input" rows="1" placeholder="Ask about your crops..."></textarea>
+    </div>
+    <button id="send-btn" onclick="sendMessage()">
+      <svg viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/></svg>
+    </button>
+  </div>
+
+</div>
+
+<script>
+  const API = "http://127.0.0.1:8000/chat";
+  const chat = document.getElementById("chat");
+  const input = document.getElementById("msg-input");
+
+  // set welcome time
+  document.getElementById("welcome-time").textContent = getTime();
+
+  // auto resize textarea
+  input.addEventListener("input", () => {
+    input.style.height = "auto";
+    input.style.height = input.scrollHeight + "px";
+  });
+
+  // send on Enter (Shift+Enter for newline)
+  input.addEventListener("keydown", e => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      sendMessage();
+    }
+  });
+
+  function getTime() {
+    return new Date().toLocaleTimeString([], { hour:"2-digit", minute:"2-digit" });
+  }
+
+  function scrollBottom() {
+    chat.scrollTop = chat.scrollHeight;
+  }
+
+  function addBubble(text, role) {
+    const row = document.createElement("div");
+    row.className = `bubble-row ${role}`;
+
+    const time = getTime();
+
+    if (role === "bot") {
+      row.innerHTML = `
+        <div class="bot-avatar">🌾</div>
+        <div>
+          <div class="bubble bot">${text}</div>
+          <div class="bubble-time">${time}</div>
+        </div>`;
+    } else {
+      row.innerHTML = `
+        <div>
+          <div class="bubble user">${text}</div>
+          <div class="bubble-time">${time}</div>
+        </div>`;
+    }
+
+    chat.appendChild(row);
+    scrollBottom();
+    return row;
+  }
+
+  function showTyping() {
+    const row = document.createElement("div");
+    row.className = "bubble-row";
+    row.id = "typing";
+    row.innerHTML = `
+      <div class="bot-avatar">🌾</div>
+      <div class="bubble bot typing">
+        <span></span><span></span><span></span>
+      </div>`;
+    chat.appendChild(row);
+    scrollBottom();
+  }
+
+  function hideTyping() {
+    const t = document.getElementById("typing");
+    if (t) t.remove();
+  }
+
+  async function sendMessage() {
+    const text = input.value.trim();
+    if (!text) return;
+
+    input.value = "";
+    input.style.height = "auto";
+
+    addBubble(text, "user");
+    showTyping();
+
+    try {
+      const res  = await fetch(API, {
+        method  : "POST",
+        headers : { "Content-Type": "application/json" },
+        body    : JSON.stringify({ message: text })
+      });
+      const data = await res.json();
+      hideTyping();
+      addBubble(data.reply, "bot");
+    } catch (err) {
+      hideTyping();
+      addBubble("Sorry, could not connect to server. Make sure main.py is running.", "bot");
+    }
+  }
+
+  function sendChip(text) {
+    input.value = text;
+    sendMessage();
+  }
+</script>
+</body>
+</html>

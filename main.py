@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+#basemodel for request body validation means the message sent by the user will be validated using this model
 from pydantic import BaseModel
 import joblib
 import json
@@ -29,33 +30,41 @@ with open("intents.json") as f:
 
 
 # message sent by user
+#it is user input structure and it will be validated using this model
 class Message(BaseModel):
     message: str
 
 # helper function to get response from intents.json based on predicted tag
+#check all tags in the intents.json file and return a random response from the corresponding tag
 def get_response(tag):
     for intent in data["intents"]:
+        #match the predicted tag with the tag in the intents.json file a
         if intent["tag"] == tag:
+            #return a random response from the that tag
             return random.choice(intent["responses"]) 
 
 
 # post method to receive user message, predict intent and return response
 @app.post("/chat")
+#take message as input request
+#this message is class which represent the structure of user input and validate using pydantic
 def chat(request: Message):
 
     #convert user message to number using the loaded vectorizer
     user_vector = vectorizer.transform([request.message.lower()])
 
     #predict the intent tag (label) using the loaded model
+    #predict the tag based on the user input and the patterns in the intent.json file
     tag = model.predict(user_vector)[0]
 
-    # if intent is weather, call the weather function to get weather data and advice
+    # if intent is weather, call the weather function to get weather data and advice 
+    # otherwise get response from intents.json
     if tag == "weather":
         reply = get_weather_reply(request.message)
     else:
         reply = get_response(tag)
 
-# return the predicted tag and the corresponding reply
+# return the predicted tag and the corresponding reply to the user
     return {
         "intent" : tag,
         "reply"  : reply

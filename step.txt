@@ -1,0 +1,18 @@
+-->intents.json
+create make intents.json(contain TAG,PATTERN,RESPONSE)tag=label, pattern=sentence(user input)
+
+
+-->compare_model.ipynb
+then create ipynb file where save best model
+
+
+-->weather.py
+     we load multiple city and state based on API and then extract the city from the message
+    and based on city tell weather condition
+    and tell farmming advice
+
+
+--->main.py
+    load model and vectorizer
+    open intents.json
+    take input and give output
