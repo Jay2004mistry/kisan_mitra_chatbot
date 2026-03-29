@@ -1,0 +1,111 @@
+import json
+import joblib
+import numpy as np
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.svm import SVC
+from sklearn.pipeline import Pipeline
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score, classification_report
+
+# ─────────────────────────────────────────
+# STEP 1 — Load intents.json
+# ─────────────────────────────────────────
+with open("intents.json", "r") as f:
+    data = json.load(f)
+
+# ─────────────────────────────────────────
+# STEP 2 — Extract patterns and tags
+# This is your X (input) and y (label)
+# Same concept as your AQI dataset columns
+# ─────────────────────────────────────────
+sentences = []   # X — the training sentences
+labels    = []   # y — the intent tag for each sentence
+
+for intent in data["intents"]:
+    for pattern in intent["patterns"]:
+        sentences.append(pattern.lower())   # always lowercase
+        labels.append(intent["tag"])
+
+print(f"Total training sentences : {len(sentences)}")
+print(f"Total intent classes     : {len(set(labels))}")
+print(f"Classes                  : {set(labels)}")
+print()
+
+# ─────────────────────────────────────────
+# STEP 3 — Split into train and test
+# Same as you do in every ML project
+# ─────────────────────────────────────────
+X_train, X_test, y_train, y_test = train_test_split(
+    sentences, labels,
+    test_size=0.2,
+    random_state=42
+)
+
+print(f"Training samples : {len(X_train)}")
+print(f"Testing samples  : {len(X_test)}")
+print()
+
+# ─────────────────────────────────────────
+# STEP 4 — Build Pipeline
+# TF-IDF converts text → numbers
+# SVM classifies the numbers → intent tag
+# Pipeline chains them so you call just one .fit()
+# ─────────────────────────────────────────
+model = Pipeline([
+    ("tfidf", TfidfVectorizer(
+        ngram_range=(1, 2),   # learns single words AND word pairs
+        min_df=1,
+        analyzer="word"
+    )),
+    ("svm", SVC(
+        kernel="linear",      # linear works best for text
+        probability=True,     # lets us get confidence scores
+        C=1.0
+    ))
+])
+
+# ─────────────────────────────────────────
+# STEP 5 — Train the model
+# Exact same as model.fit(X_train, y_train)
+# ─────────────────────────────────────────
+print("Training model...")
+model.fit(X_train, y_train)
+print("Training complete!")
+print()
+
+# ─────────────────────────────────────────
+# STEP 6 — Evaluate
+# Same accuracy/report you use in every project
+# ─────────────────────────────────────────
+y_pred = model.predict(X_test)
+acc = accuracy_score(y_test, y_pred)
+print(f"Model accuracy : {acc * 100:.1f}%")
+print()
+print("Full report:")
+print(classification_report(y_test, y_pred))
+
+# ─────────────────────────────────────────
+# STEP 7 — Save model
+# joblib.dump — same as your AQI project
+# ─────────────────────────────────────────
+joblib.dump(model, "model.pkl")
+print("model.pkl saved successfully!")
+
+# ─────────────────────────────────────────
+# QUICK TEST — type a sentence, see prediction
+# ─────────────────────────────────────────
+print()
+print("--- Quick prediction test ---")
+test_sentences = [
+    "my crop leaves are yellow",
+    "will it rain tomorrow",
+    "which fertilizer for wheat",
+    "insects on my field",
+    "namaste"
+]
+for s in test_sentences:
+    tag = model.predict([s])[0]
+    confidence = max(model.predict_proba([s])[0])
+    print(f"  '{s}'")
+    print(f"   → intent: {tag}  (confidence: {confidence*100:.1f}%)")
+    print()
