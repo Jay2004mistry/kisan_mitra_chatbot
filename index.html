@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Kisan Mitra</title>
+<title>Kisan Mitra - Farming Assistant</title>
 <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
 <style>
   :root {
@@ -24,70 +24,141 @@
 
   body {
     font-family: 'DM Sans', sans-serif;
-    background: var(--green-dark);
+    background: linear-gradient(135deg, #1a3a2a 0%, #2d6a4f 100%);
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image:
-      radial-gradient(ellipse at 20% 50%, #2d6a4f33 0%, transparent 60%),
-      radial-gradient(ellipse at 80% 20%, #52b78822 0%, transparent 50%);
   }
 
-  .phone {
+  /* ========== ROBOT BUTTON (FLOATING) ========== */
+  .robot-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--green-mid), var(--green-light));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    border: 3px solid white;
+    animation: float 2s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  .robot-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+    animation: none;
+  }
+  .robot-btn:active {
+    transform: scale(0.95);
+  }
+  .robot-btn span {
+    font-size: 38px;
+  }
+  .robot-tooltip {
+    position: absolute;
+    right: 80px;
+    background: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--green-mid);
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+  }
+  .robot-btn:hover .robot-tooltip {
+    opacity: 1;
+  }
+
+  /* ========== CHAT WIDGET (HIDDEN BY DEFAULT) ========== */
+  .chat-widget {
+    position: fixed;
+    bottom: 120px;
+    right: 30px;
     width: 390px;
-    height: 820px;
+    height: 700px;
     background: var(--white);
-    border-radius: 40px;
+    border-radius: 25px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 40px 80px #00000066, 0 0 0 1px #52b78833;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    z-index: 999;
+    transform: scale(0);
+    opacity: 0;
+    transform-origin: bottom right;
+    transition: all 0.3s ease;
+    pointer-events: none;
+  }
+  .chat-widget.open {
+    transform: scale(1);
+    opacity: 1;
+    pointer-events: all;
   }
 
-  /* ── Header ── */
-  .header {
+  /* Header */
+  .chat-header {
     background: var(--green-mid);
-    padding: 20px 20px 16px;
+    padding: 16px 18px;
     display: flex;
     align-items: center;
     gap: 12px;
     flex-shrink: 0;
+    cursor: pointer;
   }
-  .avatar {
-    width: 46px; height: 46px;
+  .chat-avatar {
+    width: 42px; height: 42px;
     border-radius: 50%;
     background: var(--green-light);
     display: flex; align-items: center; justify-content: center;
     font-size: 22px;
-    flex-shrink: 0;
   }
-  .header-info { flex: 1; }
-  .header-name {
+  .chat-header-info { flex: 1; }
+  .chat-header-name {
     font-family: 'Tiro Devanagari Hindi', serif;
-    font-size: 18px;
+    font-size: 16px;
     color: #fff;
     font-weight: 400;
-    letter-spacing: 0.3px;
   }
-  .header-sub {
-    font-size: 12px;
+  .chat-header-sub {
+    font-size: 11px;
     color: var(--green-pale);
     margin-top: 2px;
   }
-  .status-dot {
-    width: 8px; height: 8px;
+  .close-chat {
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
-    background: var(--amber);
-    display: inline-block;
-    margin-right: 5px;
-    animation: pulse 2s infinite;
+    background: rgba(255,255,255,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s;
   }
-  @keyframes pulse {
-    0%,100% { opacity:1; } 50% { opacity:0.4; }
+  .close-chat:hover {
+    background: rgba(255,255,255,0.3);
+  }
+  .close-chat span {
+    font-size: 18px;
+    color: white;
   }
 
-  /* ── Quick chips ── */
+  /* Quick chips */
   .chips {
     background: var(--white);
     padding: 10px 14px;
@@ -101,7 +172,7 @@
   .chips::-webkit-scrollbar { display: none; }
   .chip {
     white-space: nowrap;
-    font-size: 12px;
+    font-size: 11px;
     padding: 5px 12px;
     border-radius: 20px;
     border: 1px solid var(--green-light);
@@ -117,22 +188,20 @@
     border-color: var(--green-mid);
   }
 
-  /* ── Chat area ── */
-  .chat {
+  /* Chat area */
+  .chat-area {
     flex: 1;
     overflow-y: auto;
-    padding: 16px 14px;
+    padding: 14px;
     display: flex;
     flex-direction: column;
     gap: 10px;
     scrollbar-width: thin;
-    scrollbar-color: #d8f3dc transparent;
   }
 
-  /* date label */
   .date-label {
     text-align: center;
-    font-size: 11px;
+    font-size: 10px;
     color: var(--text-muted);
     background: #e8f5e955;
     padding: 3px 12px;
@@ -140,7 +209,6 @@
     align-self: center;
   }
 
-  /* bubbles */
   .bubble-row {
     display: flex;
     align-items: flex-end;
@@ -154,7 +222,7 @@
   .bubble-row.user { flex-direction: row-reverse; }
 
   .bot-avatar {
-    width: 30px; height: 30px;
+    width: 28px; height: 28px;
     border-radius: 50%;
     background: var(--green-light);
     display: flex; align-items: center; justify-content: center;
@@ -166,8 +234,8 @@
     max-width: 75%;
     padding: 10px 14px;
     border-radius: 18px;
-    font-size: 14px;
-    line-height: 1.55;
+    font-size: 13px;
+    line-height: 1.5;
     white-space: pre-wrap;
   }
   .bubble.bot {
@@ -182,18 +250,16 @@
     border-bottom-right-radius: 4px;
   }
   .bubble-time {
-    font-size: 10px;
+    font-size: 9px;
     color: var(--text-muted);
     margin-top: 3px;
     padding: 0 4px;
     align-self: flex-end;
   }
-  .bubble-row.user .bubble-time { text-align: right; }
 
-  /* typing indicator */
   .typing { display: flex; gap: 4px; padding: 12px 14px; align-items: center; }
   .typing span {
-    width: 7px; height: 7px;
+    width: 6px; height: 6px;
     border-radius: 50%;
     background: var(--green-light);
     animation: bounce 1s infinite;
@@ -202,46 +268,45 @@
   .typing span:nth-child(3) { animation-delay: 0.3s; }
   @keyframes bounce {
     0%,60%,100% { transform: translateY(0); }
-    30% { transform: translateY(-5px); }
+    30% { transform: translateY(-4px); }
   }
 
-  /* ── Input bar ── */
+  /* Input bar */
   .input-bar {
-    padding: 12px 14px;
+    padding: 10px 14px;
     background: var(--white);
     border-top: 1px solid #e8f5e9;
     display: flex;
-    gap: 10px;
+    gap: 8px;
     align-items: flex-end;
     flex-shrink: 0;
   }
   .input-wrap {
     flex: 1;
     background: #f0faf2;
-    border-radius: 24px;
+    border-radius: 22px;
     border: 1.5px solid #c8e6c9;
-    padding: 10px 16px;
+    padding: 8px 14px;
     display: flex;
     align-items: center;
-    transition: border-color 0.2s;
   }
   .input-wrap:focus-within { border-color: var(--green-light); }
   #msg-input {
     flex: 1;
     border: none;
     background: transparent;
-    font-size: 14px;
+    font-size: 13px;
     font-family: 'DM Sans', sans-serif;
     color: var(--text-dark);
     outline: none;
     resize: none;
-    max-height: 80px;
+    max-height: 70px;
     line-height: 1.4;
   }
   #msg-input::placeholder { color: #aac8ae; }
 
   #send-btn {
-    width: 44px; height: 44px;
+    width: 40px; height: 40px;
     border-radius: 50%;
     background: var(--green-mid);
     border: none;
@@ -252,50 +317,54 @@
   }
   #send-btn:hover { background: var(--green-light); }
   #send-btn:active { transform: scale(0.93); }
-  #send-btn svg { width:20px; height:20px; fill:#fff; }
+  #send-btn svg { width:18px; height:18px; fill:#fff; }
 </style>
 </head>
 <body>
 
-<div class="phone">
+<!-- ROBOT BUTTON (Always visible) -->
+<div class="robot-btn" onclick="openChat()">
+  <span>🤖</span>
+  <div class="robot-tooltip">Ask Kisan Mitra</div>
+</div>
 
+<!-- CHAT WIDGET (Hidden initially) -->
+<div class="chat-widget" id="chatWidget">
   <!-- Header -->
-  <div class="header">
-    <div class="avatar">🌾</div>
-    <div class="header-info">
-      <div class="header-name">Kisan Mitra</div>
-      <div class="header-sub">
-        <span class="status-dot"></span>Farmer Assistant · Online
-      </div>
+  <div class="chat-header" onclick="closeChat()">
+    <div class="chat-avatar">🌾</div>
+    <div class="chat-header-info">
+      <div class="chat-header-name">Kisan Mitra</div>
+      <div class="chat-header-sub">🌿 Farmer Assistant · Online</div>
+    </div>
+    <div class="close-chat">
+      <span>✕</span>
     </div>
   </div>
 
   <!-- Quick chips -->
   <div class="chips">
-    <button class="chip" onclick="sendChip('my crop has disease')">Crop disease</button>
-    <button class="chip" onclick="sendChip('weather in Ahmedabad')">Weather</button>
-    <button class="chip" onclick="sendChip('which fertilizer for wheat')">Fertilizer</button>
-    <button class="chip" onclick="sendChip('insects on my field')">Pest control</button>
-    <button class="chip" onclick="sendChip('government scheme for farmers')">Govt schemes</button>
-    <button class="chip" onclick="sendChip('when to sow wheat')">Sowing time</button>
+    <button class="chip" onclick="sendChip('my crop has disease')">🌿 Crop disease</button>
+    <button class="chip" onclick="sendChip('weather in Ahmedabad')">🌤️ Weather</button>
+    <button class="chip" onclick="sendChip('which fertilizer for wheat')">🧪 Fertilizer</button>
+    <button class="chip" onclick="sendChip('insects on my field')">🐛 Pest control</button>
+    <button class="chip" onclick="sendChip('government scheme')">🏛️ Govt schemes</button>
+    <button class="chip" onclick="sendChip('soil health tips')">🪴 Soil health</button>
   </div>
 
-  <!-- Chat -->
-  <div class="chat" id="chat">
+  <!-- Chat Area -->
+  <div class="chat-area" id="chatArea">
     <div class="date-label">Today</div>
-
-    <!-- Welcome message -->
     <div class="bubble-row">
       <div class="bot-avatar">🌾</div>
       <div>
-        <div class="bubble bot">Namaste Kisan bhai! 🙏
-I am Kisan Mitra. Ask me about crops, weather, soil, fertilizer, pests or government schemes.</div>
-        <div class="bubble-time" id="welcome-time"></div>
+        <div class="bubble bot">Namaste Kisan bhai! 🙏<br><br>I am Kisan Mitra. Ask me about crops, weather, soil, fertilizer, pests or government schemes.</div>
+        <div class="bubble-time" id="welcomeTime"></div>
       </div>
     </div>
   </div>
 
-  <!-- Input -->
+  <!-- Input Bar -->
   <div class="input-bar">
     <div class="input-wrap">
       <textarea id="msg-input" rows="1" placeholder="Ask about your crops..."></textarea>
@@ -304,24 +373,24 @@ I am Kisan Mitra. Ask me about crops, weather, soil, fertilizer, pests or govern
       <svg viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/></svg>
     </button>
   </div>
-
 </div>
 
 <script>
   const API = "http://127.0.0.1:8000/chat";
-  const chat = document.getElementById("chat");
+  const chatWidget = document.getElementById("chatWidget");
+  const chatArea = document.getElementById("chatArea");
   const input = document.getElementById("msg-input");
 
-  // set welcome time
-  document.getElementById("welcome-time").textContent = getTime();
+  // Set welcome time
+  document.getElementById("welcomeTime").textContent = getTime();
 
-  // auto resize textarea
+  // Auto resize textarea
   input.addEventListener("input", () => {
     input.style.height = "auto";
     input.style.height = input.scrollHeight + "px";
   });
 
-  // send on Enter (Shift+Enter for newline)
+  // Send on Enter
   input.addEventListener("keydown", e => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
@@ -330,17 +399,27 @@ I am Kisan Mitra. Ask me about crops, weather, soil, fertilizer, pests or govern
   });
 
   function getTime() {
-    return new Date().toLocaleTimeString([], { hour:"2-digit", minute:"2-digit" });
+    return new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
   }
 
   function scrollBottom() {
-    chat.scrollTop = chat.scrollHeight;
+    chatArea.scrollTop = chatArea.scrollHeight;
+  }
+
+  // Open chat widget
+  function openChat() {
+    chatWidget.classList.add("open");
+    setTimeout(() => scrollBottom(), 100);
+  }
+
+  // Close chat widget
+  function closeChat() {
+    chatWidget.classList.remove("open");
   }
 
   function addBubble(text, role) {
     const row = document.createElement("div");
     row.className = `bubble-row ${role}`;
-
     const time = getTime();
 
     if (role === "bot") {
@@ -358,7 +437,7 @@ I am Kisan Mitra. Ask me about crops, weather, soil, fertilizer, pests or govern
         </div>`;
     }
 
-    chat.appendChild(row);
+    chatArea.appendChild(row);
     scrollBottom();
     return row;
   }
@@ -372,7 +451,7 @@ I am Kisan Mitra. Ask me about crops, weather, soil, fertilizer, pests or govern
       <div class="bubble bot typing">
         <span></span><span></span><span></span>
       </div>`;
-    chat.appendChild(row);
+    chatArea.appendChild(row);
     scrollBottom();
   }
 
@@ -392,10 +471,10 @@ I am Kisan Mitra. Ask me about crops, weather, soil, fertilizer, pests or govern
     showTyping();
 
     try {
-      const res  = await fetch(API, {
-        method  : "POST",
-        headers : { "Content-Type": "application/json" },
-        body    : JSON.stringify({ message: text })
+      const res = await fetch(API, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: text })
       });
       const data = await res.json();
       hideTyping();
