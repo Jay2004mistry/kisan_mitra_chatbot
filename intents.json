@@ -1,8 +1,6 @@
 {
-    
   "intents": [
     {
-        
       "tag": "greeting",
       "patterns": [
         "hello",
@@ -12,21 +10,25 @@
         "good evening",
         "namaste",
         "kem cho",
-        "who are you"
+        "who are you",
+        "what is your name",
+        "hello there",
+        "hi there",
+        "good afternoon",
+        "howdy",
+        "greetings",
+        "hello kisan mitra",
+        "hi kisan mitra",
+        "namaste kisan bhai",
+        "hello brother",
+        "hi friend",
+        "sup",
+        "what's up",
+        "how are you"
       ],
-      "response": "Namaste Kisan bhai! I am Kisan Mitra. I can help you with crop disease, weather, fertilizer, soil, irrigation and pest problems. How can I help you today?"
+      "responses": ["Namaste Kisan bhai! I am Kisan Mitra. I can help you with crop disease, weather, fertilizer, soil, irrigation and pest problems. How can I help you today?"]
     },
-    {
-      "tag": "noanswer",
-      "patterns": [],
-      "responses": [
-        "Sorry, I can't understand you",
-        "Please give me more info",
-        "Not sure I understand"
-      ],
-      "context_set": ""
-    },
-
+    
     {
       "tag": "crop_disease",
       "patterns": [
@@ -39,11 +41,31 @@
         "crop leaves are falling",
         "fungus on my crop",
         "my wheat crop is sick",
-        "cotton crop has problem"
+        "cotton crop has problem",
+        "yellow leaves on my plant",
+        "brown spots on leaves",
+        "crop rotting",
+        "leaves curling up",
+        "my crop is wilting",
+        "powdery white substance on leaves",
+        "rust on leaves",
+        "crop has blight",
+        "leaves have holes",
+        "stunted growth in crop",
+        "crop turning yellow",
+        "black mold on leaves",
+        "crop leaves have spots",
+        "my plants look unhealthy",
+        "crop is infected",
+        "disease in my field",
+        "crop disease treatment",
+        "how to cure crop disease",
+        "what is wrong with my crop",
+        "crop getting sick"
       ],
-      "response": "Your crop may have a fungal or bacterial infection. 1) Remove infected leaves immediately. 2) Spray copper fungicide or neem oil solution. 3) Avoid overwatering. 4) If problem continues, contact your local Krishi Kendra."
+      "responses": ["Your crop may have a fungal or bacterial infection. 1) Remove infected leaves immediately. 2) Spray copper fungicide or neem oil solution. 3) Avoid overwatering. 4) If problem continues, contact your local Krishi Kendra."]
     },
-
+    
     {
       "tag": "weather",
       "patterns": [
@@ -56,11 +78,29 @@
         "is there storm coming",
         "temperature today in my area",
         "humidity today",
-        "can I sow seeds today"
+        "can I sow seeds today",
+        "today's weather",
+        "weather report",
+        "is it going to rain",
+        "rain prediction",
+        "weather update",
+        "what's the temperature",
+        "how hot is it today",
+        "is it good weather for farming",
+        "can I do spraying today",
+        "will there be rain",
+        "weather for farming",
+        "climate today",
+        "is it sunny today",
+        "what's the forecast",
+        "should I water my crops today",
+        "rain chances today",
+        "weather conditions",
+        "current weather"
       ],
-      "response": "WEATHER_INTENT"
+      "responses": ["WEATHER_INTENT"]
     },
-
+    
     {
       "tag": "fertilizer",
       "patterns": [
@@ -73,11 +113,29 @@
         "soil needs fertilizer",
         "when to apply fertilizer",
         "organic fertilizer suggestion",
-        "DAP or urea which is better"
+        "DAP or urea which is better",
+        "best fertilizer for crops",
+        "NPK ratio for wheat",
+        "how to apply fertilizer",
+        "fertilizer dosage",
+        "which fertilizer gives more yield",
+        "compost vs chemical fertilizer",
+        "fertilizer for vegetable crops",
+        "nitrogen fertilizer",
+        "phosphorus fertilizer",
+        "potash for crops",
+        "micronutrients for soil",
+        "fertilizer schedule",
+        "how often to fertilize",
+        "liquid fertilizer",
+        "fertilizer for good yield",
+        "what nutrients does my crop need",
+        "organic manure",
+        "vermicompost benefits"
       ],
-      "response": "For most crops: 1) Use DAP at sowing time for phosphorus. 2) Apply Urea in 2 splits - at 20 days and 40 days after sowing. 3) For organic option use compost or vermicompost. Always do soil testing first at your Krishi Kendra for best results."
+      "responses": ["For most crops: 1) Use DAP at sowing time for phosphorus. 2) Apply Urea in 2 splits - at 20 days and 40 days after sowing. 3) For organic option use compost or vermicompost. Always do soil testing first at your Krishi Kendra for best results."]
     },
-
+    
     {
       "tag": "soil",
       "patterns": [
@@ -90,11 +148,29 @@
         "soil ph is high",
         "acidic soil treatment",
         "how to test soil",
-        "soil health card"
+        "soil health card",
+        "soil testing near me",
+        "soil fertility",
+        "improve soil quality",
+        "soil moisture",
+        "soil type identification",
+        "sandy soil crops",
+        "clay soil crops",
+        "black soil crops",
+        "red soil treatment",
+        "soil conservation",
+        "soil erosion control",
+        "how to make soil fertile",
+        "soil preparation",
+        "soil management",
+        "what soil is good for farming",
+        "soil health improvement",
+        "soil testing lab",
+        "free soil testing"
       ],
-      "response": "To improve soil health: 1) Add organic compost or cow dung manure. 2) For dry soil - mulching helps retain moisture. 3) For acidic soil - add lime powder. 4) Get your free Soil Health Card from PM Soil Health Card Scheme at your nearest Krishi Kendra."
+      "responses": ["To improve soil health: 1) Add organic compost or cow dung manure. 2) For dry soil - mulching helps retain moisture. 3) For acidic soil - add lime powder. 4) Get your free Soil Health Card from PM Soil Health Card Scheme at your nearest Krishi Kendra."]
     },
-
+    
     {
       "tag": "irrigation",
       "patterns": [
@@ -107,11 +183,26 @@
         "flood irrigation or drip",
         "how to save water in farming",
         "sprinkler irrigation",
-        "water my wheat crop"
+        "water my wheat crop",
+        "best irrigation method",
+        "watering crops",
+        "how often to water",
+        "irrigation system",
+        "water management",
+        "drip system subsidy",
+        "sprinkler system cost",
+        "water conservation",
+        "when is best time to water",
+        "morning or evening watering",
+        "how much water does wheat need",
+        "irrigation for cotton",
+        "drought management",
+        "water efficient farming",
+        "irrigation techniques"
       ],
-      "response": "Smart irrigation tips: 1) Water in early morning or evening - not afternoon. 2) Drip irrigation saves 40% water vs flood irrigation. 3) Check soil moisture before watering - stick finger 2 inches deep, if dry then water. 4) PM Krishi Sinchai Yojana gives subsidy on drip systems."
+      "responses": ["Smart irrigation tips: 1) Water in early morning or evening - not afternoon. 2) Drip irrigation saves 40% water vs flood irrigation. 3) Check soil moisture before watering - stick finger 2 inches deep, if dry then water. 4) PM Krishi Sinchai Yojana gives subsidy on drip systems."]
     },
-
+    
     {
       "tag": "pest",
       "patterns": [
@@ -124,11 +215,26 @@
         "aphids on my plant",
         "white fly on crop",
         "stem borer problem",
-        "natural pest control"
+        "natural pest control",
+        "caterpillars on crop",
+        "bugs eating leaves",
+        "how to control pests",
+        "organic pesticide",
+        "neem oil for pests",
+        "pest management",
+        "insecticide for crops",
+        "pest control methods",
+        "how to protect crop from insects",
+        "pesticide spray schedule",
+        "safe pesticide",
+        "biological pest control",
+        "pest resistant crops",
+        "insect attack on cotton",
+        "how to get rid of pests"
       ],
-      "response": "For pest control: 1) First try neem oil spray - mix 5ml neem oil in 1 litre water. 2) Yellow sticky traps for whitefly and aphids. 3) For serious attack use approved pesticide from local Krishi Kendra. 4) Never spray pesticide if rain expected in 4 hours. 5) Use protective gear while spraying."
+      "responses": ["For pest control: 1) First try neem oil spray - mix 5ml neem oil in 1 litre water. 2) Yellow sticky traps for whitefly and aphids. 3) For serious attack use approved pesticide from local Krishi Kendra. 4) Never spray pesticide if rain expected in 4 hours. 5) Use protective gear while spraying."]
     },
-
+    
     {
       "tag": "sowing_time",
       "patterns": [
@@ -141,11 +247,26 @@
         "kharif or rabi crop",
         "best crop for this season",
         "crop calendar gujarat",
-        "which crop gives more profit"
+        "which crop gives more profit",
+        "sowing time for vegetables",
+        "when to plant maize",
+        "rabi crops list",
+        "kharif crops list",
+        "summer crops",
+        "winter crops",
+        "monsoon crops",
+        "crop rotation",
+        "seasonal crops",
+        "what to plant in june",
+        "what to plant in october",
+        "best sowing month",
+        "crop planning",
+        "farming calendar",
+        "when to harvest"
       ],
-      "response": "Gujarat crop calendar: 1) Kharif season (June-November) - Cotton, Groundnut, Rice, Bajra. 2) Rabi season (October-March) - Wheat, Cumin, Mustard, Chickpea. 3) Summer season (March-June) - Vegetables, Sesame. For best crop selection based on your soil and water, visit eKrishi Sanchar portal."
+      "responses": ["Gujarat crop calendar: 1) Kharif season (June-November) - Cotton, Groundnut, Rice, Bajra. 2) Rabi season (October-March) - Wheat, Cumin, Mustard, Chickpea. 3) Summer season (March-June) - Vegetables, Sesame. For best crop selection based on your soil and water, visit eKrishi Sanchar portal."]
     },
-
+    
     {
       "tag": "government_scheme",
       "patterns": [
@@ -158,11 +279,26 @@
         "pradhan mantri fasal bima",
         "help for small farmer",
         "free seeds scheme",
-        "government help for farming"
+        "government help for farming",
+        "pm kisan samman nidhi",
+        "agriculture subsidy",
+        "tractor subsidy",
+        "drip irrigation subsidy",
+        "solar pump subsidy",
+        "free electricity for farmers",
+        "farmer welfare schemes",
+        "how to get kisan credit card",
+        "crop insurance claim",
+        "soil health card scheme",
+        "pm kisan maan dhan",
+        "farmer pension scheme",
+        "agriculture loan",
+        "interest free loan",
+        "government yojana for farmers"
       ],
-      "response": "Important schemes for you: 1) PM-KISAN - Rs 6000/year direct to bank account. 2) PM Fasal Bima Yojana - crop insurance at low premium. 3) Kisan Credit Card - farming loan at 4% interest. 4) Soil Health Card - free soil testing. 5) PM Krishi Sinchai - drip irrigation subsidy. Visit pmkisan.gov.in or call 155261 for details."
+      "responses": ["Important schemes for you: 1) PM-KISAN - Rs 6000/year direct to bank account. 2) PM Fasal Bima Yojana - crop insurance at low premium. 3) Kisan Credit Card - farming loan at 4% interest. 4) Soil Health Card - free soil testing. 5) PM Krishi Sinchai - drip irrigation subsidy. Visit pmkisan.gov.in or call 155261 for details."]
     },
-
+    
     {
       "tag": "goodbye",
       "patterns": [
@@ -173,9 +309,22 @@
         "ok bye",
         "that is all",
         "no more questions",
-        "alvida"
+        "alvida",
+        "thank you so much",
+        "thanks for help",
+        "see you later",
+        "talk to you later",
+        "bye bye",
+        "thanks bye",
+        "ok thanks",
+        "that's it",
+        "all done",
+        "thanks kisan mitra",
+        "bye friend",
+        "take care",
+        "have a good day"
       ],
-      "response": "Jai Jawan Jai Kisan! Feel free to come back anytime. Wishing you a great harvest this season, Kisan bhai!"
+      "responses": ["Jai Jawan Jai Kisan! Feel free to come back anytime. Wishing you a great harvest this season, Kisan bhai!"]
     }
   ]
 }
