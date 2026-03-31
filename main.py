@@ -23,7 +23,8 @@ model      = joblib.load("model.pkl")
 vectorizer = joblib.load("vectorizer.pkl")
 
 #load intents.json which contains the predefined responses for different intents
-with open("intents.json") as f:
+#we are using encoding utf-8 because it allow us to read special character with diffrent language.
+with open("intents.json", encoding='utf-8') as f:
     data = json.load(f)
 
 
@@ -42,6 +43,7 @@ def get_response(tag):
         if intent["tag"] == tag:
             #return a random response from the that tag
             return random.choice(intent["responses"]) 
+    return "I'm not sure how to respond to that. Could you please rephrase your question about farming?"
 
 
 # post method to receive user message, predict intent and return response

@@ -3,100 +3,61 @@
     {
       "tag": "greeting",
       "patterns": [
-        "hello",
-        "hi",
-        "hey",
-        "good morning",
-        "good evening",
-        "namaste",
-        "kem cho",
-        "who are you",
-        "what is your name",
-        "hello there",
-        "hi there",
-        "good afternoon",
-        "howdy",
-        "greetings",
-        "hello kisan mitra",
-        "hi kisan mitra",
-        "namaste kisan bhai",
-        "hello brother",
-        "hi friend",
-        "sup",
-        "what's up",
-        "how are you"
+        "hello", "hi", "hey", "good morning", "good evening", "good afternoon",
+        "namaste", "kem cho", "who are you", "what is your name", "hello there",
+        "hi there", "howdy", "greetings", "hello kisan mitra", "hi kisan mitra",
+        "namaste kisan bhai", "hello brother", "hi friend", "sup", "what's up",
+        "how are you", "kaise ho", "kya haal hai", "sat sri akal", "vanakkam",
+        "namaskara", "nomoskar", "hello ji", "namaste ji"
       ],
-      "responses": ["Namaste Kisan bhai! I am Kisan Mitra. I can help you with crop disease, weather, fertilizer, soil, irrigation and pest problems. How can I help you today?"]
+      "responses": [
+        "🌾 Namaste Kisan bhai! I am Kisan Mitra, your AI farming assistant. I can help you with crop diseases, weather, fertilizers, soil health, irrigation, pest control, sowing times, government schemes, market prices, and more! How can I assist you today?",
+        "🙏 Welcome to Kisan Mitra! I'm here to help you with all farming-related queries. Whether it's crop problems, weather advice, or government schemes, just ask me!",
+        "🤝 Hello Kisan bhai! Kisan Mitra at your service. Ask me anything about farming, and I'll give you expert advice to improve your harvest!"
+      ]
     },
     
     {
       "tag": "crop_disease",
       "patterns": [
-        "my crop has disease",
-        "crop is dying",
-        "leaves are turning yellow",
-        "white spots on leaves",
-        "black spots on crop",
-        "my plant is not growing",
-        "crop leaves are falling",
-        "fungus on my crop",
-        "my wheat crop is sick",
-        "cotton crop has problem",
-        "yellow leaves on my plant",
-        "brown spots on leaves",
-        "crop rotting",
-        "leaves curling up",
-        "my crop is wilting",
-        "powdery white substance on leaves",
-        "rust on leaves",
-        "crop has blight",
-        "leaves have holes",
-        "stunted growth in crop",
-        "crop turning yellow",
-        "black mold on leaves",
-        "crop leaves have spots",
-        "my plants look unhealthy",
-        "crop is infected",
-        "disease in my field",
-        "crop disease treatment",
-        "how to cure crop disease",
-        "what is wrong with my crop",
-        "crop getting sick"
+        "my crop has disease", "crop is dying", "leaves are turning yellow",
+        "white spots on leaves", "black spots on crop", "my plant is not growing",
+        "crop leaves are falling", "fungus on my crop", "my wheat crop is sick",
+        "cotton crop has problem", "yellow leaves on my plant", "brown spots on leaves",
+        "crop rotting", "leaves curling up", "my crop is wilting",
+        "powdery white substance on leaves", "rust on leaves", "crop has blight",
+        "leaves have holes", "stunted growth in crop", "crop turning yellow",
+        "black mold on leaves", "crop leaves have spots", "my plants look unhealthy",
+        "crop is infected", "disease in my field", "crop disease treatment",
+        "how to cure crop disease", "what is wrong with my crop", "crop getting sick",
+        "wheat disease", "rice disease", "cotton disease", "tomato blight",
+        "potato late blight", "mildew on leaves", "leaf curl virus", "yellow rust",
+        "brown rust", "downy mildew", "anthracnose", "fusarium wilt",
+        "bacterial leaf spot", "root rot", "stem rot", "fruit rot"
       ],
-      "responses": ["Your crop may have a fungal or bacterial infection. 1) Remove infected leaves immediately. 2) Spray copper fungicide or neem oil solution. 3) Avoid overwatering. 4) If problem continues, contact your local Krishi Kendra."]
+      "responses": [
+        "🌿 **Crop Disease Diagnosis & Management:**\n\n1️⃣ **Remove infected parts** immediately to prevent spread\n2️⃣ **Spray treatment**: Copper fungicide OR neem oil solution (5ml neem oil + 1 liter water + few drops soap)\n3️⃣ **Preventive measures**:\n   • Avoid overhead watering\n   • Maintain proper plant spacing for air circulation\n   • Apply mulch to prevent soil splash\n4️⃣ **If severe**: Take sample to your nearest Krishi Kendra for lab testing\n\n📞 Call Kisan Call Center: 1800-180-1551 for expert advice",
+        
+        "🔬 **Quick Disease Control Guide:**\n\n• **Fungal diseases**: Use Trichoderma viride (bio-fungicide)\n• **Bacterial diseases**: Spray copper oxychloride\n• **Viral diseases**: Remove infected plants, control insect vectors\n• **Nutritional deficiency**: Apply micronutrients (zinc, iron, magnesium)\n\n⚠️ Always wear protective gear while spraying pesticides!",
+        
+        "🌱 **Organic Disease Management:**\n\n1. **Neem oil spray**: Effective against powdery mildew, rust\n2. **Garlic-chili spray**: Natural anti-fungal\n3. **Baking soda solution**: 1 tbsp baking soda + 1 liter water for mildew\n4. **Buttermilk spray**: For viral diseases\n5. **Compost tea**: Strengthens plant immunity\n\nStart with organic methods first, then move to chemical if needed!"
+      ]
     },
     
     {
       "tag": "weather",
       "patterns": [
-        "will it rain today",
-        "what is the weather",
-        "should I spray pesticide today",
-        "is it good day for farming",
-        "weather forecast for my field",
-        "will it rain this week",
-        "is there storm coming",
-        "temperature today in my area",
-        "humidity today",
-        "can I sow seeds today",
-        "today's weather",
-        "weather report",
-        "is it going to rain",
-        "rain prediction",
-        "weather update",
-        "what's the temperature",
-        "how hot is it today",
-        "is it good weather for farming",
-        "can I do spraying today",
-        "will there be rain",
-        "weather for farming",
-        "climate today",
-        "is it sunny today",
-        "what's the forecast",
-        "should I water my crops today",
-        "rain chances today",
-        "weather conditions",
-        "current weather"
+        "will it rain today", "what is the weather", "should I spray pesticide today",
+        "is it good day for farming", "weather forecast for my field",
+        "will it rain this week", "is there storm coming", "temperature today",
+        "humidity today", "can I sow seeds today", "today's weather",
+        "weather report", "is it going to rain", "rain prediction",
+        "weather update", "what's the temperature", "how hot is it today",
+        "is it good weather for farming", "can I do spraying today",
+        "will there be rain", "weather for farming", "climate today",
+        "is it sunny today", "what's the forecast", "should I water crops",
+        "rain chances today", "weather conditions", "current weather",
+        "what's the temperature in", "weather in my city", "farming weather"
       ],
       "responses": ["WEATHER_INTENT"]
     },
@@ -104,227 +65,231 @@
     {
       "tag": "fertilizer",
       "patterns": [
-        "which fertilizer is good",
-        "how much urea to use",
-        "fertilizer for wheat",
-        "fertilizer for cotton",
-        "fertilizer for rice",
-        "my crop needs nutrients",
-        "soil needs fertilizer",
-        "when to apply fertilizer",
-        "organic fertilizer suggestion",
-        "DAP or urea which is better",
-        "best fertilizer for crops",
-        "NPK ratio for wheat",
-        "how to apply fertilizer",
-        "fertilizer dosage",
-        "which fertilizer gives more yield",
-        "compost vs chemical fertilizer",
-        "fertilizer for vegetable crops",
-        "nitrogen fertilizer",
-        "phosphorus fertilizer",
-        "potash for crops",
-        "micronutrients for soil",
-        "fertilizer schedule",
-        "how often to fertilize",
-        "liquid fertilizer",
-        "fertilizer for good yield",
-        "what nutrients does my crop need",
-        "organic manure",
-        "vermicompost benefits"
+        "which fertilizer is good", "how much urea to use", "fertilizer for wheat",
+        "fertilizer for cotton", "fertilizer for rice", "my crop needs nutrients",
+        "soil needs fertilizer", "when to apply fertilizer", "organic fertilizer",
+        "DAP or urea", "best fertilizer for crops", "NPK ratio", "how to apply fertilizer",
+        "fertilizer dosage", "which fertilizer gives more yield", "compost vs chemical",
+        "fertilizer for vegetables", "nitrogen fertilizer", "phosphorus fertilizer",
+        "potash for crops", "micronutrients", "fertilizer schedule", "how often to fertilize",
+        "liquid fertilizer", "fertilizer for good yield", "what nutrients does my crop need",
+        "organic manure", "vermicompost", "green manure", "biofertilizer", "rhizobium",
+        "azotobacter", "PSB culture", "zinc application", "iron deficiency",
+        "how to make compost", "cow dung manure", "leaf compost"
       ],
-      "responses": ["For most crops: 1) Use DAP at sowing time for phosphorus. 2) Apply Urea in 2 splits - at 20 days and 40 days after sowing. 3) For organic option use compost or vermicompost. Always do soil testing first at your Krishi Kendra for best results."]
+      "responses": [
+        "🧪 **Fertilizer Application Guide:**\n\n**For Cereals (Wheat, Rice):**\n• **Basal dose**: DAP 125-150 kg/ha\n• **1st top dressing (20-25 days)**: Urea 60-75 kg/ha\n• **2nd top dressing (40-45 days)**: Urea 60-75 kg/ha\n\n**For Cotton:**\n• **Basal**: DAP 100-125 kg/ha + Potash 50 kg/ha\n• **1st top dressing (30 days)**: Urea 50 kg/ha\n• **2nd top dressing (60 days)**: Urea 50 kg/ha\n\n⚠️ Always do soil test before applying fertilizers!",
+        
+        "🌿 **Organic Fertilizer Options:**\n\n1. **Farm Yard Manure (FYM)**: 10-12 tons/ha - Apply before sowing\n2. **Vermicompost**: 5-7 tons/ha - Rich in nutrients\n3. **Green Manure**: Dhaincha, Sunhemp - Plow before flowering\n4. **Biofertilizers**:\n   • Rhizobium for pulses\n   • Azospirillum for cereals\n   • PSB for phosphorus availability\n5. **Panchagavya**: 3% spray for growth promotion\n\nOrganic fertilizers improve soil health long-term!",
+        
+        "💡 **Smart Fertilizer Tips:**\n\n✅ **Do's:**\n• Apply fertilizers in moist soil\n• Mix with soil thoroughly\n• Use split application for nitrogen\n• Apply micronutrients based on deficiency symptoms\n\n❌ **Don'ts:**\n• Don't apply urea on dry soil\n• Don't mix urea with DAP\n• Don't apply before heavy rain\n• Don't over-fertilize - it damages soil\n\n📊 **NPK Ratio Guide**: For most crops - 120:60:40 kg/ha (N:P:K)"
+      ]
     },
     
     {
       "tag": "soil",
       "patterns": [
-        "my soil is too dry",
-        "soil is not fertile",
-        "how to improve soil",
-        "soil color is black",
-        "soil is sandy",
-        "clay soil problem",
-        "soil ph is high",
-        "acidic soil treatment",
-        "how to test soil",
-        "soil health card",
-        "soil testing near me",
-        "soil fertility",
-        "improve soil quality",
-        "soil moisture",
-        "soil type identification",
-        "sandy soil crops",
-        "clay soil crops",
-        "black soil crops",
-        "red soil treatment",
-        "soil conservation",
-        "soil erosion control",
-        "how to make soil fertile",
-        "soil preparation",
-        "soil management",
-        "what soil is good for farming",
-        "soil health improvement",
-        "soil testing lab",
-        "free soil testing"
+        "my soil is too dry", "soil is not fertile", "how to improve soil",
+        "soil color is black", "soil is sandy", "clay soil problem",
+        "soil ph is high", "acidic soil treatment", "how to test soil",
+        "soil health card", "soil testing near me", "soil fertility",
+        "improve soil quality", "soil moisture", "soil type identification",
+        "sandy soil crops", "clay soil crops", "black soil crops",
+        "red soil treatment", "soil conservation", "soil erosion control",
+        "how to make soil fertile", "soil preparation", "soil management",
+        "what soil is good for farming", "soil health improvement",
+        "soil testing lab", "free soil testing", "saline soil", "alkaline soil",
+        "soil pH correction", "gypsum for soil", "lime for soil"
       ],
-      "responses": ["To improve soil health: 1) Add organic compost or cow dung manure. 2) For dry soil - mulching helps retain moisture. 3) For acidic soil - add lime powder. 4) Get your free Soil Health Card from PM Soil Health Card Scheme at your nearest Krishi Kendra."]
+      "responses": [
+        "🏞️ **Soil Health Management:**\n\n**1. Soil Testing:**\n• Get free Soil Health Card from Krishi Kendra\n• Test pH, EC, NPK, micronutrients\n• Test every 2-3 years\n\n**2. Soil pH Correction:**\n• **Acidic soil (pH < 6.5)**: Add lime powder - 500-1000 kg/ha\n• **Alkaline soil (pH > 8.0)**: Add gypsum - 500-1000 kg/ha\n\n**3. Improve Fertility:**\n• Add organic matter (FYM, compost)\n• Practice crop rotation\n• Grow green manure crops\n• Use biofertilizers",
+        
+        "🌱 **Soil Type Guide:**\n\n**Black Soil (Regur):**\n• Best for: Cotton, Groundnut, Jowar\n• Needs: Proper drainage, organic matter\n\n**Red Soil:**\n• Best for: Ragi, Pulses, Millets\n• Needs: Organic manure, irrigation\n\n**Sandy Soil:**\n• Best for: Watermelon, Groundnut, Cactus crops\n• Needs: Frequent irrigation, organic matter\n\n**Clay Soil:**\n• Best for: Paddy, Wheat, Sugarcane\n• Needs: Proper drainage, organic matter",
+        
+        "💚 **Soil Conservation Tips:**\n\n1. **Mulching**: Cover soil with straw/leaves - retains moisture\n2. **Contour Plowing**: Plow along slopes - prevents erosion\n3. **Cover Crops**: Plant legumes between main crops\n4. **Crop Rotation**: Change crops each season\n5. **Zero Tillage**: Reduces soil disturbance\n6. **Terracing**: On sloped lands\n\n✅ **Healthy Soil = Healthy Crop = Better Yield!**"
+      ]
     },
     
     {
       "tag": "irrigation",
       "patterns": [
-        "how much water for crop",
-        "when to water my field",
-        "drip irrigation help",
-        "my crop needs water",
-        "irrigation schedule",
-        "water shortage in field",
-        "flood irrigation or drip",
-        "how to save water in farming",
-        "sprinkler irrigation",
-        "water my wheat crop",
-        "best irrigation method",
-        "watering crops",
-        "how often to water",
-        "irrigation system",
-        "water management",
-        "drip system subsidy",
-        "sprinkler system cost",
-        "water conservation",
-        "when is best time to water",
-        "morning or evening watering",
-        "how much water does wheat need",
-        "irrigation for cotton",
-        "drought management",
-        "water efficient farming",
-        "irrigation techniques"
+        "how much water for crop", "when to water my field", "drip irrigation",
+        "my crop needs water", "irrigation schedule", "water shortage in field",
+        "flood irrigation or drip", "how to save water", "sprinkler irrigation",
+        "water my wheat crop", "best irrigation method", "watering crops",
+        "how often to water", "irrigation system", "water management",
+        "drip system subsidy", "sprinkler system cost", "water conservation",
+        "when is best time to water", "morning or evening watering",
+        "how much water does wheat need", "irrigation for cotton",
+        "drought management", "water efficient farming", "irrigation techniques",
+        "check basin irrigation", "furrow irrigation", "micro irrigation",
+        "sprinkler spacing", "drip line spacing", "irrigation frequency"
       ],
-      "responses": ["Smart irrigation tips: 1) Water in early morning or evening - not afternoon. 2) Drip irrigation saves 40% water vs flood irrigation. 3) Check soil moisture before watering - stick finger 2 inches deep, if dry then water. 4) PM Krishi Sinchai Yojana gives subsidy on drip systems."]
+      "responses": [
+        "💧 **Smart Irrigation Guide:**\n\n**Best Watering Time:**\n• ✅ Early morning (5-8 AM) - Best\n• ✅ Evening (5-7 PM) - Good\n• ❌ Afternoon (11 AM-4 PM) - Avoid (high evaporation)\n\n**Water Requirements:**\n• **Wheat**: 4-6 irrigations, 450-500 mm water\n• **Rice**: 12-15 irrigations, 1200-1500 mm water\n• **Cotton**: 4-5 irrigations, 600-700 mm water\n• **Vegetables**: 7-10 irrigations, 400-500 mm water\n\n**Check Soil Moisture**: Insert finger 2-3 inches deep - if dry, water needed",
+        
+        "🌊 **Irrigation Methods:**\n\n**1. Drip Irrigation (Best)**\n• 40-60% water saving\n• 20-40% yield increase\n• Best for: Vegetables, Fruits, Cotton\n• PM Krishi Sinchai Yojana: 55% subsidy\n\n**2. Sprinkler System**\n• 30-40% water saving\n• Best for: Wheat, Pulses, Oilseeds\n• Works on undulating land\n\n**3. Furrow Irrigation**\n• Good for row crops\n• Saves 30% water vs flood\n\n**4. Flood Irrigation**\n• Traditional but wasteful\n• Only for paddy fields",
+        
+        "💰 **Water Saving Tips:**\n\n1. **Apply for PMKSY subsidy** for drip/sprinkler at local agriculture office\n2. **Use plastic mulch** - reduces evaporation by 50%\n3. **Practice alternate furrow irrigation**\n4. **Install rain gauge** - avoid irrigation if 2-3 cm rain received\n5. **Laser land leveling** - saves 20-25% water\n6. **Grow drought-resistant varieties**\n\n📞 For subsidy details: Call 1800-180-1551"
+      ]
     },
     
     {
       "tag": "pest",
       "patterns": [
-        "insects on my crop",
-        "pest attack on field",
-        "locusts in my farm",
-        "worms eating my crop",
-        "how to remove insects",
-        "pesticide suggestion",
-        "aphids on my plant",
-        "white fly on crop",
-        "stem borer problem",
-        "natural pest control",
-        "caterpillars on crop",
-        "bugs eating leaves",
-        "how to control pests",
-        "organic pesticide",
-        "neem oil for pests",
-        "pest management",
-        "insecticide for crops",
-        "pest control methods",
-        "how to protect crop from insects",
-        "pesticide spray schedule",
-        "safe pesticide",
-        "biological pest control",
-        "pest resistant crops",
-        "insect attack on cotton",
-        "how to get rid of pests"
+        "insects on my crop", "pest attack", "locusts in my farm",
+        "worms eating my crop", "how to remove insects", "pesticide suggestion",
+        "aphids on my plant", "white fly on crop", "stem borer problem",
+        "natural pest control", "caterpillars on crop", "bugs eating leaves",
+        "how to control pests", "organic pesticide", "neem oil for pests",
+        "pest management", "insecticide for crops", "pest control methods",
+        "how to protect crop from insects", "pesticide spray schedule",
+        "safe pesticide", "biological pest control", "pest resistant crops",
+        "insect attack on cotton", "how to get rid of pests", "spider mites",
+        "thrips", "fruit borer", "pod borer", "leaf miner", "jassids",
+        "sucking pests", "bollworm", "armyworm", "fall armyworm"
       ],
-      "responses": ["For pest control: 1) First try neem oil spray - mix 5ml neem oil in 1 litre water. 2) Yellow sticky traps for whitefly and aphids. 3) For serious attack use approved pesticide from local Krishi Kendra. 4) Never spray pesticide if rain expected in 4 hours. 5) Use protective gear while spraying."]
+      "responses": [
+        "🐛 **Integrated Pest Management (IPM):**\n\n**Step 1: Cultural Control**\n• Remove infected plants\n• Deep plowing in summer\n• Crop rotation\n• Trap crops (marigold, castor)\n\n**Step 2: Mechanical Control**\n• Handpick large larvae\n• Use yellow sticky traps for whitefly\n• Use pheromone traps for bollworm\n• Light traps for moths\n\n**Step 3: Biological Control**\n• Release Trichogramma eggs (parasitoids)\n• Use Bacillus thuringiensis (Bt)\n• Neem oil: 5ml/L water\n• Verticillium lecanii for sucking pests",
+        
+        "🌿 **Organic Pest Control Recipes:**\n\n**1. Neem Oil Spray**\n• 5ml neem oil + 1L water + few drops soap\n• Effective against: Aphids, whitefly, mites\n\n**2. Garlic-Chili Spray**\n• 10 garlic cloves + 5 green chilies\n• Grind, mix in 1L water, strain\n• Effective against: Caterpillars, beetles\n\n**3. Cow Urine Spray**\n• 500ml cow urine + 10L water\n• Acts as pest repellent\n\n**4. Panchagavya**\n• 3% spray for pest resistance\n\n**5. Tobacco Extract**\n• 50g tobacco in 1L water, soak overnight\n• Effective against aphids, thrips\n\n⚠️ Test on small area first!",
+        
+        "🧪 **Chemical Pest Control:**\n\n**For Sucking Pests (Aphids, Jassids):**\n• Imidacloprid 17.8% SL - 100ml/ha\n• Dimethoate 30% EC - 500ml/ha\n\n**For Borers (Stem, Fruit):**\n• Cypermethrin 10% EC - 300ml/ha\n• Emamectin benzoate 5% SG - 200g/ha\n\n**For Mites:**\n• Fenazaquin 10% EC - 500ml/ha\n\n**Important Guidelines:**\n✅ Wear protective gear (mask, gloves)\n✅ Spray in evening when bees inactive\n✅ Follow waiting period before harvest\n✅ Rotate pesticides to avoid resistance\n❌ Never spray during rain or strong wind\n\n📞 Call Plant Protection Advisor: 1800-180-1551"
+      ]
     },
     
     {
       "tag": "sowing_time",
       "patterns": [
-        "when to sow wheat",
-        "best time to plant cotton",
-        "when to plant rice",
-        "sowing season for groundnut",
-        "when to start farming",
-        "which crop to grow now",
-        "kharif or rabi crop",
-        "best crop for this season",
-        "crop calendar gujarat",
-        "which crop gives more profit",
-        "sowing time for vegetables",
-        "when to plant maize",
-        "rabi crops list",
-        "kharif crops list",
-        "summer crops",
-        "winter crops",
-        "monsoon crops",
-        "crop rotation",
-        "seasonal crops",
-        "what to plant in june",
-        "what to plant in october",
-        "best sowing month",
-        "crop planning",
-        "farming calendar",
-        "when to harvest"
+        "when to sow wheat", "best time to plant cotton", "when to plant rice",
+        "sowing season for groundnut", "when to start farming", "which crop to grow now",
+        "kharif or rabi crop", "best crop for this season", "crop calendar",
+        "which crop gives more profit", "sowing time for vegetables", "when to plant maize",
+        "rabi crops list", "kharif crops list", "summer crops", "winter crops",
+        "monsoon crops", "crop rotation", "seasonal crops", "what to plant in june",
+        "what to plant in october", "best sowing month", "crop planning",
+        "farming calendar", "when to harvest", "sowing depth", "seed rate",
+        "seed treatment", "seed germination", "seed selection"
       ],
-      "responses": ["Gujarat crop calendar: 1) Kharif season (June-November) - Cotton, Groundnut, Rice, Bajra. 2) Rabi season (October-March) - Wheat, Cumin, Mustard, Chickpea. 3) Summer season (March-June) - Vegetables, Sesame. For best crop selection based on your soil and water, visit eKrishi Sanchar portal."]
+      "responses": [
+        "📅 **Complete Crop Calendar:**\n\n**🌧️ KHARIF Season (June-October):**\n• **Cotton**: June-July\n• **Groundnut**: June-July\n• **Rice/Paddy**: June-July\n• **Bajra**: July-August\n• **Maize**: June-July\n• **Soybean**: June-July\n• **Tur/Arhar**: June-July\n\n**🌾 RABI Season (October-March):**\n• **Wheat**: October-November\n• **Gram/Chana**: October-November\n• **Mustard**: October-November\n• **Peas**: October-November\n• **Barley**: October-November\n• **Sunflower**: December-January\n\n**☀️ SUMMER Season (March-June):**\n• **Groundnut**: February-March\n• **Vegetables**: February-March\n• **Sesame**: March-April\n• **Moong**: March-April",
+        
+        "🌱 **Seed Treatment Guide:**\n\n**Chemical Treatment:**\n• **Fungal**: Carbendazim 2g/kg seed\n• **Bacterial**: Streptocycline 0.5g/L water\n\n**Bio Treatment:**\n• **Trichoderma viride**: 4g/kg seed\n• **Pseudomonas**: 10g/kg seed\n\n**For Pulses:** Rhizobium culture 200g/10kg seed\n**For Wheat:** Mix with water, dry in shade\n**For Paddy:** Salt water treatment for healthy seeds\n\n✅ Benefits:\n• Protects from soil-borne diseases\n• Increases germination\n• Improves yield by 10-15%",
+        
+        "💰 **Profitable Crop Selection:**\n\n**High Profit Crops:**\n1. **Vegetables**: Tomato, Onion, Potato - Rs 50,000-1,00,000/acre\n2. **Cotton**: Rs 40,000-60,000/acre\n3. **Sugarcane**: Rs 80,000-1,20,000/acre\n4. **Turmeric**: Rs 1,00,000-1,50,000/acre\n\n**Low Investment Options:**\n• **Groundnut**: 30,000-40,000/acre\n• **Wheat**: 25,000-35,000/acre\n• **Pulses**: 15,000-25,000/acre\n\n**Tips:**\n• Check market prices before sowing\n• Consider your soil type\n• Ensure irrigation availability\n• Start with intercropping (cotton + groundnut)\n\n📊 Check e-NAM portal for real-time prices!"
+      ]
     },
     
     {
       "tag": "government_scheme",
       "patterns": [
-        "government scheme for farmers",
-        "pm kisan yojana",
-        "farming subsidy",
-        "loan for farmer",
-        "kisan credit card",
-        "crop insurance",
-        "pradhan mantri fasal bima",
-        "help for small farmer",
-        "free seeds scheme",
-        "government help for farming",
-        "pm kisan samman nidhi",
-        "agriculture subsidy",
-        "tractor subsidy",
-        "drip irrigation subsidy",
-        "solar pump subsidy",
-        "free electricity for farmers",
-        "farmer welfare schemes",
-        "how to get kisan credit card",
-        "crop insurance claim",
-        "soil health card scheme",
-        "pm kisan maan dhan",
-        "farmer pension scheme",
-        "agriculture loan",
-        "interest free loan",
-        "government yojana for farmers"
+        "government scheme", "pm kisan yojana", "farming subsidy",
+        "loan for farmer", "kisan credit card", "crop insurance",
+        "pradhan mantri fasal bima", "help for small farmer",
+        "free seeds scheme", "government help", "pm kisan samman nidhi",
+        "agriculture subsidy", "tractor subsidy", "drip irrigation subsidy",
+        "solar pump subsidy", "free electricity", "farmer welfare schemes",
+        "how to get kisan credit card", "crop insurance claim",
+        "soil health card scheme", "pm kisan maan dhan", "farmer pension",
+        "agriculture loan", "interest free loan", "government yojana",
+        "pm kisan", "kisan credit", "kcc", "pradhan mantri fasal bima yojana",
+        "pmfby", "pradhan mantri krishi sinchai yojana", "pmksy",
+        "neem coated urea subsidy", "seed subsidy", "fertilizer subsidy"
       ],
-      "responses": ["Important schemes for you: 1) PM-KISAN - Rs 6000/year direct to bank account. 2) PM Fasal Bima Yojana - crop insurance at low premium. 3) Kisan Credit Card - farming loan at 4% interest. 4) Soil Health Card - free soil testing. 5) PM Krishi Sinchai - drip irrigation subsidy. Visit pmkisan.gov.in or call 155261 for details."]
+      "responses": [
+        "🇮🇳 **Important Government Schemes:**\n\n**1. PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)**\n• ₹6,000/year in 3 installments\n• Direct bank transfer\n• Eligibility: All landholding farmers\n• Website: pmkisan.gov.in\n\n**2. PMFBY (Pradhan Mantri Fasal Bima Yojana)**\n• Crop insurance at 1.5-2% premium\n• Coverage for crop loss from natural calamities\n• Claims up to full sum insured\n• Website: pmfby.gov.in\n\n**3. KCC (Kisan Credit Card)**\n• Loan at 4% interest\n• Covers cultivation, post-harvest needs\n• Get from any bank\n• Withdrawal limit: Up to ₹3 lakh\n\n**4. PMKSY (Krishi Sinchai Yojana)**\n• 55% subsidy for drip/sprinkler\n• For water conservation\n• Apply at agriculture department",
+        
+        "💵 **Subsidy Details:**\n\n**Equipment Subsidies:**\n• **Tractor**: Up to ₹50,000 (SC/ST) or 25% subsidy\n• **Pump Sets**: 50% subsidy (up to ₹50,000)\n• **Solar Pump**: 60-80% subsidy under PM-KUSUM\n• **Drip/Sprinkler**: 55% subsidy under PMKSY\n\n**Input Subsidies:**\n• **Seeds**: 50-75% subsidy for certified seeds\n• **Fertilizers**: Neem-coated urea at subsidized rates\n• **Bio-fertilizers**: 50% subsidy\n\n**For SC/ST/Minority Farmers:** Additional 10-20% subsidy\n\n**Apply at:** District Agriculture Office or Online Portal",
+        
+        "📝 **How to Apply:**\n\n**PM-KISAN Registration:**\n1. Visit pmkisan.gov.in\n2. Click 'New Farmer Registration'\n3. Enter Aadhaar, bank details\n4. Upload land records\n5. Submit - Get registered\n\n**KCC Application:**\n1. Visit nearest bank branch\n2. Fill KCC application\n3. Submit land documents, Aadhaar\n4. Bank verifies and issues KCC within 15 days\n\n**Crop Insurance (PMFBY):**\n1. Register at bank or online portal\n2. Pay premium before sowing\n3. Keep crop photos for evidence\n4. Report loss within 72 hours\n\n**Helpline Numbers:**\n• Kisan Call Center: 1800-180-1551\n• PM-KISAN Helpline: 155261\n• PMFBY Helpline: 1800-180-1552\n\n📞 Don't pay any agent for registration - it's free!"
+      ]
+    },
+    
+    {
+      "tag": "market_price",
+      "patterns": [
+        "market price", "crop price", "what is price of wheat",
+        "cotton price today", "current market rate", "mandi price",
+        "minimum support price", "MSP", "where to sell crop",
+        "best market for selling", "crop rates", "commodity price",
+        "eNAM price", "agricultural market", "crop selling price",
+        "wheat rate", "rice rate", "groundnut price", "onion price",
+        "tomato price", "potato price", "crop value", "sell my crop",
+        "good price for crop", "market near me", "mandi rates"
+      ],
+      "responses": [
+        "💰 **Market Price Information:**\n\n**Current MSP (Minimum Support Price) 2023-24:**\n• **Wheat**: ₹2,275/quintal\n• **Paddy**: ₹2,183/quintal\n• **Cotton**: ₹7,020/quintal\n• **Groundnut**: ₹6,377/quintal\n• **Soybean**: ₹4,600/quintal\n• **Gram**: ₹5,440/quintal\n• **Mustard**: ₹5,650/quintal\n\n**For real-time prices:**\n1. Visit eNAM website (enam.gov.in)\n2. Check local mandi rates\n3. Call Kisan Call Center: 1800-180-1551\n\n⚠️ Prices vary by state, quality, and season",
+        
+        "🏪 **How to Get Best Price:**\n\n**1. Sell at Government Agencies:**\n• CCI for cotton\n• NAFED for pulses, oilseeds\n• FCI for wheat, paddy\n• Get MSP guaranteed\n\n**2. Use eNAM Platform:**\n• Online trading platform\n• Compare prices across mandis\n• Get better rates\n• Register at eNAM mandi\n\n**3. Form Farmer Producer Organization (FPO):**\n• Collective bargaining power\n• Direct selling to companies\n• Better price realization\n\n**4. Check Before Selling:**\n• Compare 3-4 nearby mandis\n• Check quality standards\n• Clean and grade produce\n• Sell when price is high",
+        
+        "📊 **Tips for Better Price:**\n\n✅ **Quality Matters:**\n• Clean produce before selling\n• Grade as per standard\n• Remove stones, dust\n• Dry to proper moisture\n\n✅ **Storage:**\n• Store in clean, dry place\n• Use gunny bags\n• Protect from pests\n• Wait for price increase\n\n✅ **Timing:**\n• Post-harvest prices low\n• Store for 2-3 months\n• Sell in off-season for 20-30% higher price\n\n📱 **Useful Apps:**\n• eNAM App\n• AgriMarket App (by Govt of India)\n• Kisan Suvidha App"
+      ]
+    },
+    
+    {
+      "tag": "organic_farming",
+      "patterns": [
+        "organic farming", "how to do organic farming", "organic certification",
+        "natural farming", "zero budget farming", "vermicompost",
+        "organic manure", "organic pesticide", "biofertilizer", "green manure",
+        "panchagavya", "jeevamrut", "organic crop", "chemical free farming",
+        "organic cultivation", "organic methods", "organic fertilizer",
+        "organic pest control", "organic farming subsidy"
+      ],
+      "responses": [
+        "🌱 **Organic Farming Guide:**\n\n**1. Soil Preparation:**\n• Add 10-12 tons FYM/acre\n• Apply vermicompost 2-3 tons/acre\n• Green manuring with dhaincha\n• Use biofertilizers (Rhizobium, PSB)\n\n**2. Natural Inputs:**\n• **Jeevamrut**: 200L/acre every 15 days\n• **Panchagavya**: 3% spray for growth\n• **Cow urine**: Pest repellent\n\n**3. Pest Management:**\n• Neem oil 5ml/L water\n• Garlic-chili extract\n• Trap crops (marigold)\n• Release natural predators",
+        
+        "🔄 **Organic Certification Process:**\n\n**Step 1:** Register with certification agency\n• NPOP (National Programme for Organic Production)\n• PGS-India (Participatory Guarantee System) for small farmers\n\n**Step 2:** Conversion period (2-3 years)\n• No chemical inputs during this period\n• Maintain records of all practices\n\n**Step 3:** Inspection\n• Field inspection by certification body\n• Soil and water testing\n• Documentation verification\n\n**Step 4:** Certification\n• Get organic certificate\n• Premium price for organic produce\n• Export opportunities\n\n💰 **Subsidy**: 50% subsidy up to ₹10,000/acre under PKVY (Paramparagat Krishi Vikas Yojana)",
+        
+        "💡 **Zero Budget Natural Farming (ZBNF):**\n\n**Core Principles:**\n1. **Beejamrit**: Seed treatment with cow dung, cow urine\n2. **Jeevamrut**: Microbial culture for soil fertility\n3. **Acchadana**: Mulching to retain moisture\n4. **Whapasa**: Soil moisture management\n5. **Intercropping**: Multiple crops together\n\n**Benefits:**\n• Zero input cost\n• 20-30% higher yield after 3 years\n• Better soil health\n• Premium price for produce\n\n**Training:** Contact Agriculture Department or ZBNF centers"
+      ]
     },
     
     {
       "tag": "goodbye",
       "patterns": [
-        "bye",
-        "goodbye",
-        "thank you",
-        "thanks",
-        "ok bye",
-        "that is all",
-        "no more questions",
-        "alvida",
-        "thank you so much",
-        "thanks for help",
-        "see you later",
-        "talk to you later",
-        "bye bye",
-        "thanks bye",
-        "ok thanks",
-        "that's it",
-        "all done",
-        "thanks kisan mitra",
-        "bye friend",
-        "take care",
-        "have a good day"
+        "bye", "goodbye", "thank you", "thanks", "ok bye", "that is all",
+        "no more questions", "alvida", "thank you so much", "thanks for help",
+        "see you later", "talk to you later", "bye bye", "thanks bye",
+        "ok thanks", "that's it", "all done", "thanks kisan mitra",
+        "bye friend", "take care", "have a good day", "shukriya",
+        "dhanyavad", "thank you bhai", "thanks for advice"
       ],
-      "responses": ["Jai Jawan Jai Kisan! Feel free to come back anytime. Wishing you a great harvest this season, Kisan bhai!"]
+      "responses": [
+        "🙏 Jai Jawan Jai Kisan! Feel free to come back anytime. Wishing you a bountiful harvest this season, Kisan bhai! 🌾",
+        "🌱 Thank you for using Kisan Mitra! Remember, good farming practices lead to better yields. Stay safe and happy farming! 🇮🇳",
+        "🤝 Alvida Kisan bhai! Always here to help you. For urgent farming advice, call Kisan Call Center at 1800-180-1551. Best wishes for your crops! 🚜",
+        "💚 Thanks for talking to me! Keep learning, keep growing. May your fields be prosperous and harvest abundant. Jai Hind! 🌾"
+      ]
+    },
+    
+    {
+      "tag": "seed_selection",
+      "patterns": [
+        "which seed is best", "best variety of wheat", "high yield seeds",
+        "hybrid seeds", "certified seeds", "where to buy seeds",
+        "seed dealer near me", "best cotton seeds", "paddy varieties",
+        "drought resistant seeds", "pest resistant varieties",
+        "seed rate per acre", "seed treatment", "seed germination test",
+        "organic seeds", "Bt cotton seeds", "basmati rice seeds"
+      ],
+      "responses": [
+        "🌾 **Seed Selection Guide:**\n\n**Wheat Varieties:**\n• **GW 322, GW 496**: High yield, disease resistant\n• **HD 2967**: Best for irrigated areas\n• **DBW 187**: Rust resistant, good for Gujarat\n\n**Paddy Varieties:**\n• **GNR 3, GNR 4**: High yield, short duration\n• **GR 11**: Good for rainfed areas\n• **Basmati 370**: Aromatic, export quality\n\n**Cotton Varieties:**\n• **Bt Cotton**: Bollworm resistant\n• **G Cot 21**: High yielding, suit for Gujarat\n\n**Buy From:**\n• Government Seed Corporations\n• Krishi Vigyan Kendra (KVK)\n• Certified dealers only\n\n✅ Always buy certified seeds with tag!"
+      ]
+    },
+    
+    {
+      "tag": "post_harvest",
+      "patterns": [
+        "how to store grains", "post harvest management", "grain storage",
+        "crop storage", "how to dry grains", "storage pest control",
+        "godown storage", "silos for storage", "grain moisture",
+        "storage structure", "bag storage", "bin storage", "hermetic storage",
+        "how to increase shelf life", "packaging of produce"
+      ],
+      "responses": [
+        "📦 **Post-Harvest Management:**\n\n**1. Harvesting:**\n• Harvest at right maturity\n• Avoid damage during harvesting\n• Thresh immediately\n• Clean produce thoroughly\n\n**2. Drying:**\n• Sun dry to 12-14% moisture\n• Spread on clean surface\n• Turn regularly\n• Protect from rain, dust\n\n**3. Storage:**\n• **Small scale**: Use Pusa bin, metal bins\n• **Large scale**: Gunny bags on wooden pallets\n• **Hermetic bags**: PICS bags for pulses\n• **Treat**: Neem leaves, vegetable oils as protectants\n\n**4. Storage Pests:**\n• Keep godown clean\n• Fumigation with aluminum phosphide\n• Use pheromone traps\n\n⚠️ Don't store damp grains - mold develops!"
+      ]
     }
   ]
 }
